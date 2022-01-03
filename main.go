@@ -10,6 +10,7 @@ const (
 	ukrainian            = "Ukrainian"
 )
 
+// 'Hello' takes name and language parameters with type string and returns greetings
 func Hello(name, language string) string {
 	if name == "" {
 		name = "World"
