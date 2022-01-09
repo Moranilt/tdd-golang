@@ -36,8 +36,4 @@ jobs:
               echo "Current test coverage is below threshold. Please add more unit tests or adjust threshold to a lower value."
               echo "Failed"
               exit 1
-            fi
-
-    - name: Build
-      run: go build -v ./...
-            
+            fi           
