@@ -29,7 +29,7 @@ jobs:
             echo "Treshhold :$TESTCOVERAGE_TRESHOLD %"
             totalCoverage=`go tool cover -func coverage.out | grep total | grep -Eo '[0-9]+\.[0-9]+'`
             echo "Current test coverage: $totalCoverage %"
-            if ($totalCoverage > $TESTCOVERAGE_TRESHOLD) 
+            if (($(echo "$totalCoverage $TESTCOVERAGE_TRESHOLD" | awk '{print ($1 > $2)}'))); then 
               echo "OK
             else
               echo "Current test coverage is below threshold. Please add more unit tests or adjust threshold to a lower value."
